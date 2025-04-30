@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Job Portal - Login/Register</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: url("https://media.istockphoto.com/id/2154887234/photo/futuristic-digital-network-background-people-and-cloud-computing-with-connections-technology.jpg") no-repeat center center/cover;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 20px 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 99;
+    }
+    .logo {
+      font-size: 2em;
+      color: white;
+    }
+    .navigation a {
+      font-size: 1.1em;
+      color: pink;
+      text-decoration: none;
+      font-weight: 500;
+      margin-left: 40px;
+      position: relative;
+    }
+    .navigation a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 100%;
+      height: 3px;
+      background: white;
+      border-radius: 5px;
+      transform: scaleX(0);
+      transition: transform 0.5s;
+      transform-origin: right;
+    }
+    .navigation a:hover::after {
+      transform: scaleX(1);
+    }
+    .btnlogin-popup {
+      background: transparent;
+      border: 2px solid skyblue;
+      color: aquamarine;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.5s;
+      font-size: 1.1em;
+      margin-left: 20px;
+    }
+    .btnlogin-popup:hover {
+      background: yellow;
+      color: blueviolet;
+    }
+
+    .wrapper {
+      position: relative;
+      width: 400px;
+      background: rgba(255,255,255,0.1);
+      border: 2px solid rgba(255,255,255,0.2);
+      border-radius: 20px;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 0 30px rgba(0,0,0,0.5);
+      padding: 40px;
+      color: #fff;
+    }
+    .form-box {
+      display: none;
+    }
+    .form-box.active {
+      display: block;
+    }
+    .form-box h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .input-box {
+      position: relative;
+      margin-bottom: 20px;
+    }
+    .input-box input {
+      width: 100%;
+      padding: 10px;
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid red;
+      color: white;
+      font-size: 1em;
+    }
+    .input-box label {
+      position: absolute;
+      top: 50%;
+      left: 5px;
+      transform: translateY(-50%);
+      pointer-events: none;
+      color: #fff;
+      transition: 0.3s;
+    }
+    .input-box input:focus + label,
+    .input-box input:valid + label {
+      top: -10px;
+      font-size: 0.8em;
+      color: yellow;
+    }
+    .remember-forgot {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9em;
+      color: wheat;
+    }
+    .remember-forgot a {
+      color: pink;
+      text-decoration: none;
+    }
+    .btn {
+      width: 100%;
+      padding: 10px;
+      background: lightseagreen;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      cursor: pointer;
+      font-size: 1em;
+      margin-top: 10px;
+    }
+    .login-register {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 0.9em;
+    }
+    .login-register a {
+      color: #fff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h2 class="logo">JOB PORTAL</h2>
+    <nav class="navigation">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+      <button class="btnlogin-popup" onclick="toggleForm('login')">Login</button>
+    </nav>
+  </header>
+
+  <div class="wrapper">
+    <!-- Login Form -->
+    <div class="form-box login active" id="login">
+      <h2>Login</h2>
+      <form>
+        <div class="input-box">
+          <input type="email" required />
+          <label>Email</label>
+        </div>
+        <div class="input-box">
+          <input type="password" required />
+          <label>Password</label>
+        </div>
+        <div class="remember-forgot">
+          <label><input type="checkbox"> Remember me</label>
+          <a href="#">Forgot password?</a>
+        </div>
+        <button type="submit" class="btn">Login</button>
+        <div class="login-register">
+          <p>Don't have an account? <a href="#" onclick="toggleForm('register')">Register</a></p>
+        </div>
+      </form>
+    </div>
+
+    <!-- Register Form -->
+    <div class="form-box register" id="register">
+      <h2>Register</h2>
+      <form>
+        <div class="input-box">
+          <input type="text" required />
+          <label>Username</label>
+        </div>
+        <div class="input-box">
+          <input type="email" required />
+          <label>Email</label>
+        </div>
+        <div class="input-box">
+          <input type="password" required />
+          <label>Password</label>
+        </div>
+        <div class="remember-forgot">
+          <label><input type="checkbox"> I agree to the terms</label>
+        </div>
+        <button type="submit" class="btn">Register</button>
+        <div class="login-register">
+          <p>Already have an account? <a href="#" onclick="toggleForm('login')">Login</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script>
+    function toggleForm(formType) {
+      document.querySelector('.form-box.login').classList.remove('active');
+      document.querySelector('.form-box.register').classList.remove('active');
+      document.querySelector(`.form-box.${formType}`).classList.add('active');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: url("https://media.istockphoto.com/id/2154887234/photo/futuristic-digital-network-background-people-and-cloud-computing-with-connections-technology.jpg?s=1024x1024&w=is&k=20&c=9j5pWs0osSDjrjXrCWvMRbzpZrBAykK5IOj1F9dnNQs=") no-repeat center/cover;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 99;
+    }
+
+    .logo {
+      font-size: 2em;
+      color: #fff;
+      user-select: none;
+    }
+
+    .navigation a {
+      position: relative;
+      font-size: 1.1em;
+      color: pink;
+      text-decoration: none;
+      font-weight: 500;
+      margin-left: 40px;
+    }
+
+    .navigation a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 100%;
+      height: 3px;
+      background: white;
+      border-radius: 5px;
+      transform-origin: right;
+      transform: scaleX(0);
+      transition: transform 0.5s;
+    }
+
+    .navigation a:hover::after {
+      transform: scaleX(1);
+    }
+
+    .btnlogin-popup {
+      width: 130px;
+      height: 50px;
+      background: transparent;
+      border: 2px solid skyblue;
+      outline: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1.1em;
+      color: aquamarine;
+      font-weight: 500;
+      margin-left: 40px;
+      transition: .5s;
+    }
+
+    .btnlogin-popup:hover {
+      background: yellow;
+      color: blueviolet;
+    }
+
+    .login-popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      background: rgba(0, 0, 0, 0.9);
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 50px #0ef;
+      z-index: 999;
+      transition: 0.4s ease;
+      width: 350px;
+    }
+
+    .login-popup.active {
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    .login-popup h2 {
+      color: white;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .input-box {
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .input-box input {
+      width: 100%;
+      padding: 10px;
+      background: transparent;
+      border: 2px solid #0ef;
+      border-radius: 5px;
+      color: white;
+      outline: none;
+    }
+
+    .input-box label {
+      position: absolute;
+      top: -20px;
+      left: 10px;
+      font-size: 14px;
+      color: skyblue;
+    }
+
+    .login-popup button {
+      width: 100%;
+      padding: 10px;
+      background: #0ef;
+      color: black;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 20px;
+      color: white;
+      cursor: pointer;
+    }
+    .login-register p{
+        color: white;
+        outline: none;
+    }
+  </style>
+</head>
+<body>
+
+    <header>
+        <h2 class="logo">Logo</h2>
+        <nav class="navigation">
+          <a href="sam.html">HOME</a>
+          <a href="sam.html">ABOUT</a>
+          <a href="#">SERVICES</a>
+          <a href="#">CONTACT</a>
+          <button class="btnlogin-popup">Login</button>
+        </nav>
+      </header>
+    
+
+  <div class="login-popup" id="loginPopup">
+    <span class="close-btn" id="closePopup">&times;</span>
+    <h2>Login</h2>
+    <form method="post" action="index.php">
+      <div class="input-box">
+        <label>Username</label>
+        <input type="text" name="username" required>
+      </div>
+      <div class="input-box">
+        <label>Password</label>
+        <input type="password" name="password" required>
+      </div>
+      <button type="submit">Login</button>
+      <div class="login-register">
+        <p>Already have an account?<a href="reg.html" class="login-link">sindup</a></p>
+    </div>
+    </form>
+  </div>
+
+  <script>
+    const loginBtn = document.querySelector('.btnlogin-popup');
+    const popup = document.getElementById('loginPopup');
+    const closeBtn = document.getElementById('closePopup');
+
+    loginBtn.addEventListener('click', () => {
+      popup.classList.add('active');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      popup.classList.remove('active');
+    });
+
+    // Optional: Close popup if clicking outside
+    window.addEventListener('click', (e) => {
+      if (e.target === popup) {
+        popup.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>

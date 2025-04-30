@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MedCare Hospital</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    body {
+      font-size: 16px;
+      line-height: 1.6;
+      background: #f8f9fa;
+    }
+
+    header {
+      background-color: #007BFF;
+      color: white;
+      padding: 1.5rem 3%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 2rem;
+      font-weight: 600;
+    }
+
+    .logo i {
+      margin-right: 10px;
+      color: #fff;
+    }
+
+    .navbar {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .navbar a {
+      color: white;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+
+    .navbar a:hover {
+      color: #ffdd57;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        display: none;
+        flex-direction: column;
+        background: #007BFF;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 200px;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      }
+
+      .navbar.active {
+        display: flex;
+      }
+
+      .menu-btn {
+        display: block;
+        font-size: 2rem;
+        cursor: pointer;
+        color: white;
+      }
+    }
+
+    .menu-btn {
+      display: none;
+    }
+
+    /* Padding to offset fixed header */
+    .content {
+      padding-top: 100px;
+    }
+    .home{
+        padding: 4rem 3%; 
+        text-align: center; 
+        background: #e3f2fd;
+    }
+    .head{
+      font-size: 3rem;
+       color: #007BFF;
+    }
+    .p{
+      font-size: 1.6rem;
+       max-width: 800px;
+        margin: 1rem auto;
+    }
+    .book{
+      margin-top: 1rem;
+       display: inline-block; 
+       padding: 1rem 2rem;
+        background: #007BFF;
+         color: white; 
+         border-radius: 5px;
+          font-weight: 500;
+    }
+    .about{
+      padding: 4rem 3%; 
+      background: #fff;
+    }.abo{
+      font-size: 2.5rem; 
+      color: #007BFF; 
+      margin-bottom: 1rem;
+    }.books{
+      padding: 4rem 3%;
+       background: #f1f1f1;
+    }.h3{
+      font-size: 2.5rem;
+       color: #007BFF; 
+       margin-bottom: 1.5rem;
+    }
+    .input-group{
+            position: relative;
+            margin: 30px 0;
+            border-bottom: 2px solid #080606;
+        }
+        .input-group label{
+            position: absolute;
+            top: 50%;
+            left: 5px;
+            transform: translateY(-50%);
+            font-size: 16px;
+            color:black;
+            pointer-events: none;
+            transition: .5s;
+
+        }
+        .input-group input{
+            width: 320px;
+            height: 40px;
+            font-size: 16px;
+            color: black;
+            padding: 0 5px;
+            background: transparent;
+            border:none;
+            outline: none;
+        }
+        .input-group input:focus~label,
+        .input-group input:valid~label{
+            top: -5px;
+        }
+        
+        button{
+            position: relative;
+            width: 100%;
+            height: 40px;
+            background: #0ef;
+            box-shadow: 0 0 10px #0ef;
+            font-size: 16px;
+            color: black;
+            font-weight: 500;
+            cursor: pointer;
+            border-radius: 30px;
+            border: none;
+            outline: none;
+        }
+        button:hover{
+            background: pink;
+            color: blue;
+        }
+        
+    </style>
+    </head>
+<body>
+
+<!-- Header -->
+<header>
+  <a href="#" class="logo">
+    <i class="fas fa-heartbeat"></i> MedCare
+  </a>
+
+  <nav class="navbar" id="navbar">
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#doctors">Doctors</a>
+    <a href="#book">Book</a>
+    <a href="#review">Review</a>
+  </nav>
+
+  <div class="menu-btn" id="menu-btn">
+    <i class="fas fa-bars"></i>
+  </div>
+</header>
+
+
+  <!-- Main Content -->
+<div class="content">
+    <!-- Home Secti``````on -->
+    <section class="home" >
+      <h1 class="head">Welcome to MedCare Hospital</h1>
+      <p class="p">
+        We are committed to providing compassionate and quality healthcare to our patients.
+        At MedCare, your health is our top priority.
+      </p>
+      <a href="#book" class="book">
+        Book an Appointment
+      </a>
+    </section>
+  
+    <!-- About Section -->
+    <section class="about" >
+      <h2 class="abo">About Us</h2>
+      <p class="p">
+        MedCare Hospital is a state-of-the-art medical facility equipped with the latest technologies and
+        staffed by a team of expert doctors, nurses, and healthcare professionals. We aim to deliver
+        world-class medical care and services in a warm and supportive environment.
+      </p>
+    </section>
+  
+    <!-- Book Section -->
+    <section class="books" >
+      <h2 class="h3">Book an Appointment</h2>
+      <form action="book.php" method="POST">
+        <div class="input-group">
+          <input type="text" required>
+          <label for="">NAME</label>
+      </div>
+      <div class="input-group">
+          <input type="phno" required>
+          <label for="">PHONE NUMBER</label>
+      </div>
+      <div class="input-group">
+          <input type="date" required>
+          <label for=""></label>
+      </div>
+      <div class="input-group">
+          <input type="address" required>
+          <label for="">ADDRESS</label>
+      </div>  
+      <div class="input-group">
+        <input type="time" required>
+        <label for=""></label>
+    </div>  
+      <button type="submit">Book on Appointment</button>
+      
+      </form>
+    </section>
+    <!-- Review Section -->
+<section class="about" id="review">
+  <h2 class="abo">Patient Reviews</h2>
+  
+  <!-- Review Form -->
+  <form id="reviewForm">
+    <div class="input-group">
+      <input type="text"  required>
+      <label for="reviewerName">Your Name</label>
+    </div>
+    <div class="input-group">
+      <input type="text" id="reviewerFeedback" required>
+      <label for="reviewerFeedback">Your Review</label>
+    </div>
+    <button type="submit">Submit Review</button>
+  </form>
+
+  <!-- Review List -->
+  
+    <!-- Reviews will be appended here -->
+  
+</section>
+
+
+  </div>
+  
+
+
+<!-- JavaScript for Toggle Menu -->
+<script>
+  // Toggle responsive navbar
+  const menuBtn = document.getElementById('menu-btn');
+  const navbar = document.getElementById('navbar');
+
+  menuBtn.addEventListener('click', () => {
+    navbar.classList.toggle('active');
+  });
+
+  // Appointment form validation
+  const appointmentForm = document.querySelector("form[action='book.php']");
+
+  appointmentForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = appointmentForm.querySelector("input[name='name']");
+    const phone = appointmentForm.querySelector("input[name='phone']");
+    const date = appointmentForm.querySelector("input[name='date']");
+    const address = appointmentForm.querySelector("input[name='address']");
+    const time = appointmentForm.querySelector("input[name='time']");
+
+    if (!name.value || !phone.value || !date.value || !address.value || !time.value) {
+      alert("Please fill in all fields.");
+      return;
+    }
+
+    const phoneRegex = /^\d{10}$/;
+    if (!phoneRegex.test(phone.value)) {
+      alert("Please enter a valid 10-digit phone number.");
+      return;
+    }
+
+    alert("Appointment booked successfully!");
+    appointmentForm.reset();
+  });
+
+  // Review form handling
+  const reviewForm = document.getElementById('reviewForm');
+
+  reviewForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const reviewerName = reviewForm.querySelector("input[type='text']");
+    const feedback = reviewForm.querySelector("#reviewerFeedback");
+
+    if (!reviewerName.value || !feedback.value) {
+      alert("Please fill in your name and review.");
+      return;
+    }
+
+    const reviewList = document.createElement('div');
+    reviewList.innerHTML = `
+      <p><strong>${reviewerName.value}</strong> says:</p>
+      <p>${feedback.value}</p>
+      <hr/>
+    `;
+    document.getElementById('review').appendChild(reviewList);
+
+    alert("Thank you for your feedback!");
+    reviewForm.reset();
+  });
+</script>
+
+</body>
+</html>
