@@ -1,0 +1,61 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    grid-template-areas: 
+    "header header"
+    "article article"
+    "footer footer";
+    background-color: #f4f4f4;
+    text-align: center;
+    
+}
+
+/* Header Styling */
+#pageheader {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    background-image: url('https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+    
+ 
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Content Section */
+#pagearticle {
+    margin: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px gray;
+}
+
+/* Footer */
+#pagefooter {
+    background-color: #0eaff4;
+    color: white;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+img{
+    width: 100%;
+}

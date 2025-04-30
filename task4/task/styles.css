@@ -1,0 +1,111 @@
+
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #9f2424;
+}
+.container  {
+    display: none;
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+    margin:100px auto 0;
+    border-radius: 10px;
+    padding:30;
+    background-color: aqua;
+}
+.heading{
+    text-align: center;
+    font-size: 40px;
+    color: blueviolet;
+    margin-bottom: 50px;
+
+}
+label{
+    display: block;
+    font-size: 12px;
+    margin-bottom: 10px;
+    color: azure;
+}
+select{
+    width: 100%;
+    padding:10px;
+    text-transform: capitalize;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background-color:black;
+    color: aquamarine;
+    font-size: 14px;
+    
+
+}
+.btn{
+    width: 100px;
+    height: 60px;
+    background-color: brown;
+    border: none;
+    border-radius: 10px;
+    margin-top: 15px;
+    color: rgb(0, 38, 104);
+    font-size: 18px;
+    font-weight: 200;
+    cursor: pointer;
+    transition: all 0.3s linear;
+}
+.btn:hover{
+    
+    background-color: blue;
+    
+}
+.btn:disabled{
+    cursor: not-allowed;
+    background-color: blueviolet;
+}
+.start-screen-hide{
+    display:none;
+}
+.timer{
+    width: 100%;
+    height:100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+margin-bottom: 30px;
+
+}
+.timer.progress{
+    position: relative;
+    width: 100%;
+    height: 60px;
+    background-color: transparent;
+    border-radius: 30px;
+    overflow:hidden;
+    margin-bottom: 10px;
+    border:3px solid red;
+
+
+}
+.timer.progress.progress-bar{
+    width: 100%;
+    height:100%;
+    border-radius: 30px;
+    overflow: hidden;
+    background:linear-gradient(to right,pink,lightpink) ;
+    transition: 1s linear;
+
+}
+.timer.progress.progress-text{
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    transform: translate(50%,50%);
+    color: chartreuse;
+    font-size:16px;
+    font-weight: 500;
+}
+.question-wrapper.number{
+
+}
+  

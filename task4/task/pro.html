@@ -1,0 +1,175 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <style>
+        
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    display: flex;
+    padding: 15px;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: blueviolet;
+}
+
+.config-container {
+    display: none;
+    width: 415px;
+    padding: 25px;
+    text-align: center;
+    background: #300672;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.13);
+    
+}
+
+.config-title {
+    font-size: 1.31rem;
+    margin-bottom: 20px;
+}
+
+.config-option {
+    margin-top: 25px;
+
+}
+.config-option button{
+    cursor: pointer;
+    border: 1px solid pink;
+    transition: 0.3s ease;
+}
+.config-option button:hover{
+    background:red;
+}
+.config-option button.active{
+    color: #9bbfff;
+    border-color: magenta;
+    background: burlywood;
+}
+
+.option-title {
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.category-options {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(2, 1fr);
+    
+}
+
+.category-option {
+    padding: 12px;
+    font-size: 0.938rem;
+    font-weight: 500;
+    background: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 1px solid #9bbfff;
+    transition: 0.3s ease;
+}
+
+.questions-options {
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.start-quiz-btn {
+    padding: 12px;
+    font-size: 0.938rem;
+    font-weight: 500;
+    background: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 1px solid #9bbfff;
+    margin-top: 25px;
+    transition: 0.3s ease;
+}
+.config-container.start-quiz-btn{
+    color: blue;
+    border:none;
+    cursor: pointer;
+    margin-top: 30px;
+    background: blueviolet;
+    padding: 13px 25px;
+}
+    </style>
+</head>
+<body>
+    <div class="config-container">
+
+        <h2 class="config-title">Quiz Configuration</h2>
+        <div class="config-option">
+            <h4 class="option-title">Select Category</h4>
+            <div class="category-options">
+                <button class="category-option active">Programming</button>
+                <button class="category-option">Geography</button>
+                <button class="category-option">Mathematics</button>
+                <button class="category-option">Entertainment</button>
+            </div>
+        </div>
+        <div class="config-option">
+            <h4 class="option-title">No. of Questions</h4>
+            <div class="category-options questions-options">
+                <button class="category-option">5</button>
+                <button class="category-option">10</button>
+                <button class="category-option">15</button>
+                <button class="category-option">20</button>
+                <button class="category-option">25</button>
+            </div>
+        </div>
+        <button class="start-quiz-btn">Start Quiz</button>
+    </div>
+    <div class="quiz-container"></div>
+    <header class="quiz-header">
+        <h2 class="quiz-title">Quiz Application</h2>
+        <div class="quiz-timer">
+            
+            <p class="time-duration">15s</p>
+        </div>
+    </header>
+    <div class="quiz-content">
+        <h1 class="quiz-questions">In javascript ,how do you create a functions</h1>
+        <ul class="answer-options">
+        <li class="answer-options">
+            <p>crete function my function()</p>
+        </li>
+        <li class="answer-options">
+            <p>crete function my function()</p>
+        </li>
+        
+        <li class="answer-options">
+            <p>crete function my function()</p>
+        </li>
+        
+        <li class="answer-options">
+            <p>crete function my function()</p>
+        </li>
+        
+        </ul>
+        <div class="quiz-footer"></div>
+        <p class="questons-status"><b>2</b> of <b>10</b> Questions</p>
+        <button class="next-questins-btn">
+            next
+        </button>
+    </div>
+    <script src="quiz.js"></script>
+
+</body>
+</html>
+
+
